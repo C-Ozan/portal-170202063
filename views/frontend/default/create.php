@@ -11,7 +11,7 @@
 
     </style>
 
-   <title>MENUM</title>
+
 </head>
 
 <body style = "background-color :#B0B0B0 ;">
@@ -23,7 +23,7 @@
 
 
 <div align="center"> <h1>ŞİKAYET FORMU</h1> </div>
-<p align="center">Aşağıda belirtilen formu eksiksiz doldurunuz.En kısa zamanda geri dönüş yapalım</p>
+
 
 </body>
 
@@ -37,7 +37,7 @@ use yii\grid\GridView;
 /* @var $model kouosl\projemodulu\models\SikayetTablosu */
 
 $this->title = '';
-$this->params['breadcrumbs'][] = ['label' => 'SikayetTablosus', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'SikayetTablosu', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="sikayet-tablosu-create">
@@ -49,6 +49,25 @@ $this->params['breadcrumbs'][] = $this->title;
     ]) ?>
 
 
+
+<div class="sikayet-tablosu-index">
+
+    <h3>Kullanıcı Şikayetleri</h3>
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+
+            'id',
+            'isim',
+            'sikayet:ntext',
+
+        ],
+    ]); ?>
+        
+
+</div>
 
 </div>
 

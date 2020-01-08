@@ -68,10 +68,12 @@ class DefaultController extends Controller
         $model = new SikayetTablosu();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+   
             
             return $this->redirect(['create', 'id']);
         }
 
+        
         return $this->render('create', [
             'model' => $model,
         ]);
