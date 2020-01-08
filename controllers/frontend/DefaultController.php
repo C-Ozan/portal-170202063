@@ -66,15 +66,20 @@ class DefaultController extends Controller
     public function actionIndex()
     {
         $model = new SikayetTablosu();
+        $dataProvider = new ActiveDataProvider([
+            'query' => SikayetTablosu::find(),
+        ]);
+
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
    
-            
+            Yii::$app->session->setFlash('success', "Şikayetiniz alındı");
             return $this->redirect(['create', 'id']);
         }
 
         
         return $this->render('create', [
+            'dataProvider' => $dataProvider,
             'model' => $model,
         ]);
     }

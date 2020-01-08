@@ -11,7 +11,7 @@
 
     </style>
 
-
+   <title></title>
 </head>
 
 <body style = "background-color :#B0B0B0 ;">
@@ -37,7 +37,7 @@ use yii\grid\GridView;
 /* @var $model kouosl\projemodulu\models\SikayetTablosu */
 
 $this->title = '';
-$this->params['breadcrumbs'][] = ['label' => 'SikayetTablosu', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'SikayetFormu', 'url' => ['create']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="sikayet-tablosu-create">
